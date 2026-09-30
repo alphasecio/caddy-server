@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -7,7 +11,13 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  height: auto;
   background-color: #282828;
+  color: #dee2e6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
 }
 
 .section {
@@ -15,28 +25,29 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.section:nth-child(2) {
-  flex: 1;
-}
-
-.section:first-child,
-.section:last-child {
   flex: 0 0 auto;
   padding: 20px;
 }
 
-.h1 {
-  font-size: 54px;
-  font-family: 'Roboto', sans-serif;
-  color: transparent;
-  background: linear-gradient(to right, #FFFFFF 0%, #FF6600 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-top: 100px;
+.content {
+  flex: 1 0 auto;
+  padding: 0;
 }
 
-.text-muted {
-  color: #999999 !important;
+.title {
+  margin: 0 0 0.5rem;
+  padding-top: 100px;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #FF6600;
+  background: linear-gradient(to right, #FFFFFF 0%, #FF6600 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.muted {
+  color: #999999;
+  font-size: 0.875em;
 }
